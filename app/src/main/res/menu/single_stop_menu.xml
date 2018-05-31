@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_do_favourite"
+        android:icon="@drawable/ic_favorite_border_black_24dp"
+        app:showAsAction="ifRoom"
+        android:title="@string/add_to_fav" />
+
+    <item
+        android:id="@+id/action_do_not_favourite"
+        android:icon="@drawable/ic_favorite_black_24dp"
+        app:showAsAction="ifRoom"
+        android:title="@string/remove_from_fav" />
+
+</menu>

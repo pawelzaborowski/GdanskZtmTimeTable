@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/choose_polish_language"
+        android:orderInCategory="100"
+        android:title="@string/polish_language"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/choose_english_language"
+        android:orderInCategory="200"
+        android:title="@string/english_language"
+        app:showAsAction="collapseActionView" />
+</menu>

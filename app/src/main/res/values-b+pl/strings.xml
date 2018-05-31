@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ZtmTimeTable</string>
+    <string name="main_activity_title">GdanskApp</string>
+    <string name="location">Gdansk</string>
+
+
+    <string name="navigation_drawer_open">Otworz navigation drawer</string>
+    <string name="navigation_drawer_close">Zamknij navigation drawer</string>
+
+    <string name="action_language">Jezyk</string>
+
+    <string name="route_title_bar">Linie</string>
+    <string name="stops_title_bar">Przystanki</string>
+    <string name="schema_title_bar">Schemat</string>
+    <string name="map_title_bar">Mapa</string>
+    <string name="share_title_bar">Udostepnij</string>
+    <string name="settings_title_bar">Ustawienia</string>
+
+    <string name="add_to_fav">Dodaj do ulubionych</string>
+    <string name="remove_from_fav">Usun z ulubionych</string>
+    <string name="added_to_fav">Dodano do ulubionych</string>
+    <string name="removed_from_fav">Usunięto z ulubionych</string>
+
+    <string name="main_screen_fav_stop">Twoj ulubiony przystanek</string>
+
+    <string name="pref_header_general">Ogolne</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+            based on your message history
+        </string>
+
+    <string name="pref_title_display_name">Wyswietl nazwe</string>
+    <string name="pref_default_display_name">1709</string>
+
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+    <item>Zawsze</item>
+    <item>Gdy mozliwe</item>
+    <item>Nigdy</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+    <item>1</item>
+    <item>0</item>
+    <item>-1</item>
+    </string-array>
+
+    <string name="pref_header_data_sync">Dane i synchronizacja</string>
+
+    <string name="pref_title_sync_frequency">Czestotliwosc odswiezania</string>
+    <string-array name="pref_sync_frequency_titles">
+    <item>15 minut</item>
+    <item>30 minut</item>
+    <item>1 godzina</item>
+    <item>3 godziny</item>
+    <item>6 godzin</item>
+    <item>Nigdy</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+    <item>15</item>
+    <item>30</item>
+    <item>60</item>
+    <item>180</item>
+    <item>360</item>
+    <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+    <item>Entry 1</item>
+    <item>Entry 2</item>
+    <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">Ustawienia synchronizacji</string>
+
+    <string name="pref_header_notifications">Powiadomienia</string>
+
+    <string name="pref_title_new_message_notifications">Zezwalaj na powiadomienia</string>
+
+    <string name="pref_title_ringtone">Dzwiek</string>
+    <string name="pref_ringtone_silent">Tryb cichy</string>
+
+    <string name="pref_title_vibrate">Wibracje</string>
+    <string name="pref_bus_stop">Ulubiony przystanek</string>
+
+</resources>
