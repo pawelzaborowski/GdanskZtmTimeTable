@@ -2,10 +2,16 @@ package si.uni_lj.student.pz8285.ztmtimetable.activities;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
+import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -53,7 +59,13 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             Log.i("lon", String.valueOf(lon));
         }
 
-//        mMap.setMyLocationEnabled(true);
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED) {
+            mMap.setMyLocationEnabled(true);
+        } else {
+            Intent loc_permission = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+            startActivity(loc_permission);
+        }
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(54, -18)));
     }
 }

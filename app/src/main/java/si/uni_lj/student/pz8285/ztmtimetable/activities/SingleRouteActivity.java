@@ -1,9 +1,13 @@
 package si.uni_lj.student.pz8285.ztmtimetable.activities;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -13,14 +17,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.StringTokenizer;
 
 import si.uni_lj.student.pz8285.ztmtimetable.R;
 import si.uni_lj.student.pz8285.ztmtimetable.parser.HttpHandler;
@@ -40,15 +42,17 @@ public class SingleRouteActivity extends AppCompatActivity {
     String outputPattern = "HH:MM";
     SimpleDateFormat inputFormat;
     SimpleDateFormat outputFormat;
+    //good
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_route);
 
-        HashMap<String, String> stopsMap = (HashMap<String, String>) this.getIntent().getSerializableExtra("stopsMap");
+        this.stopsMap = (HashMap<String, String>) this.getIntent().getSerializableExtra("stopsMap");
         HashMap<String, String> routeMap = (HashMap<String, String>) this.getIntent().getSerializableExtra("routeMap");
 
+        // this.stopsMap = stopsMap;
         if (routeMap != null) {
             Toast.makeText(SingleRouteActivity.this, routeMap.get("tripShortName"), Toast.LENGTH_LONG).show();
         }
@@ -97,7 +101,7 @@ public class SingleRouteActivity extends AppCompatActivity {
                         String routeId = c.getString("routeId");
                         String tripId = c.getString("tripId");
                         String arrivalTime = c.getString("arrivalTime");
-                        String departure = c.getString("departureTime");
+                        String departureTime = c.getString("departureTime");
                         String stopId = c.getString("stopId");
 
                         String stopDesc = null;
@@ -106,22 +110,13 @@ public class SingleRouteActivity extends AppCompatActivity {
                             Log.i("stopDesc", stopDesc);
                         }
 
-                       // String departureTime = departure.substring(departure.lastIndexOf('T'));
-                        //String departureTime = departure.substring(Math.max(0, departure.length() - 7));
+                        //"1899-12-30T"
 
-                        String[] parts = departure.split(".*T.*");
-                        String part1 = parts[0]; // 004
-                        String departureTime = parts[1];
-                        Log.i("PART [0]", parts[0]);
-                        Log.i("PART [1]", parts[1]);
+                        StringTokenizer st = new StringTokenizer(departureTime, "T");
+                        String cos = st.nextToken();
+                        departureTime = st.nextToken();
 
-//                        Pattern twopart = Pattern.compile(".*T.*");
-//                        Matcher m = twopart.matcher(departure);
-//                        String departureTime = m.group(2);
-//
-//                        Log.i("GROOOOOUP1", m.group(1));
-//                        Log.i("GROOOOOUP2", m.group(2));
-//
+
                         HashMap<String, String> stop = new HashMap<>();
 
                         stop.put("routeId", routeId);
@@ -131,7 +126,6 @@ public class SingleRouteActivity extends AppCompatActivity {
                         stop.put("stopId", stopId);
 
                         if(stopDesc != null) {
-                            Log.i("stopDesc", stopDesc);
                             stop.put("stopDesc", stopDesc);
                         }
                         routeTimeTable.add(stop);
@@ -171,10 +165,40 @@ public class SingleRouteActivity extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
 
-            ListAdapter adapter = new SimpleAdapter(SingleRouteActivity.this, routeTimeTable,
-                    R.layout.one_route_item, new String[]{"stopDesc", "arrivalTime"},
-                    new int[]{R.id.stopDesc, R.id.departureTime});
-            lv_single_route.setAdapter(adapter);
+            ArrayList<HashMap<String, String>> tempTimeTable = new ArrayList<>();
+            ArrayList<String> tempTT = new ArrayList<>();
+            String firstStop = routeTimeTable.get(0).get("stopId");
+            for(int i = 0; i < routeTimeTable.size(); i++){
+                if((routeTimeTable.get(i).get("stopId").equals(firstStop)) && i != 0){
+                    String stop = routeTimeTable.get(i).get("stopId");
+                    //tempTimeTable(i).add(stop);
+                    tempTT.add(stop);
+                }
+            }
+
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(SingleRouteActivity.this,
+                    R.layout.one_route_item, tempTT );
+
+            lv_single_route.setAdapter(arrayAdapter);
+
+
+//            ListAdapter adapter = new SimpleAdapter(SingleRouteActivity.this, routeTimeTable,
+//                    R.layout.one_route_item, new String[]{"stopDesc"},
+//                    new int[]{R.id.stopDesc});  // , R.id.departureTime
+//            lv_single_route.setAdapter(adapter);
+
+//            lv_single_route.setOnItemClickListener(
+//                    new AdapterView.OnItemClickListener() {
+//                        @Override
+//                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                            Intent one_route_stops_Intent = new Intent(SingleRouteActivity.this, TimeTable.class);
+//                            HashMap<String, String> hashmap= routeTimeTable.get(position);
+//
+//                            one_route_stops_Intent.putExtra("stopsMap", stopsMap);
+//                            one_route_stops_Intent.putExtra("timeTable", routeTimeTable);
+//                            startActivity(one_route_stops_Intent);
+//                        }
+//                    });
 
         }
 

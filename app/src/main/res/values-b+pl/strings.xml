@@ -93,4 +93,9 @@
     <string name="pref_title_vibrate">Wibracje</string>
     <string name="pref_bus_stop">Ulubiony przystanek</string>
 
+    <string name="exit">wyjście</string>
+    <string name="turn_wifi">Włącz wifi</string>
+    <string name="no_internet">Brak połączenia z internetem</string>
+    <string name="no_internet2">Proszę, włącz wifi</string>
+
 </resources>
