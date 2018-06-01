@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -36,7 +37,7 @@ public class SingleRouteActivity extends AppCompatActivity {
     ArrayList<HashMap<String, String>> routeTimeTable;
     private HashMap<String, String> stopsMap = new HashMap<String, String>();
     private String todayDate;
-
+//    TextView stopDescTextView = (TextView) findViewById(R.id.stopDesc);
 
     String inputPattern = "YYYY-MM-DD'T'HH:MM:SS";
     String outputPattern = "HH:MM";
@@ -168,37 +169,45 @@ public class SingleRouteActivity extends AppCompatActivity {
             ArrayList<HashMap<String, String>> tempTimeTable = new ArrayList<>();
             ArrayList<String> tempTT = new ArrayList<>();
             String firstStop = routeTimeTable.get(0).get("stopId");
-            for(int i = 0; i < routeTimeTable.size(); i++){
-                if((routeTimeTable.get(i).get("stopId").equals(firstStop)) && i != 0){
-                    String stop = routeTimeTable.get(i).get("stopId");
-                    //tempTimeTable(i).add(stop);
-                    tempTT.add(stop);
+            for(int i = 0; i < routeTimeTable.size(); i++) {
+                if (routeTimeTable.get(i).get("stopId").equals(firstStop) && i > 0 && routeTimeTable.get(i).get("stopId").equals(routeTimeTable.get(i - 1).get("stopId"))) {
+                    break;
                 }
+                String stopId = routeTimeTable.get(i).get("stopId");
+                //tempTimeTable(i).add(stop);
+                // tempTT.add(stop);
+                String desc = stopsMap.get(stopId);
+                HashMap<String, String> stop = new HashMap<>();
+                stop.put(stopId, desc);
+
+                tempTimeTable.add(stop);
+
             }
 
-            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(SingleRouteActivity.this,
-                    R.layout.one_route_item, tempTT );
 
-            lv_single_route.setAdapter(arrayAdapter);
-
-
-//            ListAdapter adapter = new SimpleAdapter(SingleRouteActivity.this, routeTimeTable,
-//                    R.layout.one_route_item, new String[]{"stopDesc"},
-//                    new int[]{R.id.stopDesc});  // , R.id.departureTime
-//            lv_single_route.setAdapter(adapter);
-
-//            lv_single_route.setOnItemClickListener(
-//                    new AdapterView.OnItemClickListener() {
-//                        @Override
-//                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                            Intent one_route_stops_Intent = new Intent(SingleRouteActivity.this, TimeTable.class);
-//                            HashMap<String, String> hashmap= routeTimeTable.get(position);
 //
-//                            one_route_stops_Intent.putExtra("stopsMap", stopsMap);
-//                            one_route_stops_Intent.putExtra("timeTable", routeTimeTable);
-//                            startActivity(one_route_stops_Intent);
-//                        }
-//                    });
+//            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(SingleRouteActivity.this,
+//                    R.layout.one_route_item, R.id.stopDesc, tempTT);
+//
+//            lv_single_route.setAdapter(arrayAdapter);
+
+
+            ListAdapter adapter = new SimpleAdapter(SingleRouteActivity.this, routeTimeTable,
+                    R.layout.one_route_item, new String[]{"desc"},
+                    new int[]{R.id.stopDesc});  // , R.id.departureTime
+            lv_single_route.setAdapter(adapter);
+
+            lv_single_route.setOnItemClickListener(
+                    new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Intent one_route_stops_Intent = new Intent(SingleRouteActivity.this, TimeTable.class);
+
+                            // one_route_stops_Intent.putExtra("desc", ));
+                            one_route_stops_Intent.putExtra("timeTable", routeTimeTable.get(position));
+                            startActivity(one_route_stops_Intent);
+                        }
+                    });
 
         }
 
