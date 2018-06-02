@@ -9,6 +9,7 @@
     <string name="navigation_drawer_close">Zamknij navigation drawer</string>
 
     <string name="action_language">Jezyk</string>
+    <string name="refresh">Odśwież</string>
 
     <string name="route_title_bar">Linie</string>
     <string name="stops_title_bar">Przystanki</string>

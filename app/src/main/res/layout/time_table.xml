@@ -1,17 +1,377 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="si.uni_lj.student.pz8285.ztmtimetable.activities.RouteActivity">
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="309dp"
+    android:layout_height="540dp">
 
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
-</RelativeLayout>
+    <TableRow
+        android:id="@+id/row_0"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/hour0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_1"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/hour1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_2"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="2" />
+
+        <TextView
+            android:id="@+id/hour2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_3"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="3" />
+
+        <TextView
+            android:id="@+id/hour3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_4"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="4" />
+
+        <TextView
+            android:id="@+id/hour4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_5"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="5" />
+
+        <TextView
+            android:id="@+id/hour5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_6"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="6" />
+
+        <TextView
+            android:id="@+id/hour6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_7"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="7" />
+
+        <TextView
+            android:id="@+id/hour7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_8"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="8" />
+
+        <TextView
+            android:id="@+id/hour8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_9"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="9" />
+
+        <TextView
+            android:id="@+id/hour9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_10"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="10" />
+
+        <TextView
+            android:id="@+id/hour10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_11"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="11" />
+
+        <TextView
+            android:id="@+id/hour11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_12"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="12" />
+
+        <TextView
+            android:id="@+id/hour12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_13"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="13" />
+
+        <TextView
+            android:id="@+id/hour13"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_14"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="14" />
+
+        <TextView
+            android:id="@+id/hour14"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_15"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="15" />
+
+        <TextView
+            android:id="@+id/hour15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_16"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="16" />
+
+        <TextView
+            android:id="@+id/hour16"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_17"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="17" />
+
+        <TextView
+            android:id="@+id/hour17"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_18"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="18" />
+
+        <TextView
+            android:id="@+id/hour18"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_19"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="19" />
+
+        <TextView
+            android:id="@+id/hour19"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_20"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="20" />
+
+        <TextView
+            android:id="@+id/hour20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_21"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="21" />
+
+        <TextView
+            android:id="@+id/hour21"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_22"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="22" />
+
+        <TextView
+            android:id="@+id/hour22"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/row_23"
+        android:layout_width="match_parent"
+        android:layout_height="21dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="23" />
+
+        <TextView
+            android:id="@+id/hour23"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+
+
+
+
+
+
+
+</TableLayout>
 
 
 

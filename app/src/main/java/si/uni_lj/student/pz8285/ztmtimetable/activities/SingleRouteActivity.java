@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.StringTokenizer;
 
 import si.uni_lj.student.pz8285.ztmtimetable.R;
@@ -37,6 +38,7 @@ public class SingleRouteActivity extends AppCompatActivity {
     ArrayList<HashMap<String, String>> routeTimeTable;
     private HashMap<String, String> stopsMap = new HashMap<String, String>();
     private String todayDate;
+    ArrayList<HashMap<String, String>> tempTimeTable;
 //    TextView stopDescTextView = (TextView) findViewById(R.id.stopDesc);
 
     String inputPattern = "YYYY-MM-DD'T'HH:MM:SS";
@@ -111,12 +113,9 @@ public class SingleRouteActivity extends AppCompatActivity {
                             Log.i("stopDesc", stopDesc);
                         }
 
-                        //"1899-12-30T"
-
                         StringTokenizer st = new StringTokenizer(departureTime, "T");
                         String cos = st.nextToken();
                         departureTime = st.nextToken();
-
 
                         HashMap<String, String> stop = new HashMap<>();
 
@@ -166,11 +165,11 @@ public class SingleRouteActivity extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
 
-            ArrayList<HashMap<String, String>> tempTimeTable = new ArrayList<>();
+            tempTimeTable = new ArrayList<>();
             ArrayList<String> tempTT = new ArrayList<>();
             String firstStop = routeTimeTable.get(0).get("stopId");
             for(int i = 0; i < routeTimeTable.size(); i++) {
-                if (routeTimeTable.get(i).get("stopId").equals(firstStop) && i > 0 && routeTimeTable.get(i).get("stopId").equals(routeTimeTable.get(i - 1).get("stopId"))) {
+                if ((routeTimeTable.get(i).get("stopId").equals(firstStop) && i > 0) || (routeTimeTable.get(i).get("stopId").equals(routeTimeTable.get(i + 1).get("stopId"))) && i > 4) {
                     break;
                 }
                 String stopId = routeTimeTable.get(i).get("stopId");
@@ -178,21 +177,13 @@ public class SingleRouteActivity extends AppCompatActivity {
                 // tempTT.add(stop);
                 String desc = stopsMap.get(stopId);
                 HashMap<String, String> stop = new HashMap<>();
-                stop.put(stopId, desc);
+                stop.put("stopId", stopId);
+                stop.put("desc", desc);
 
                 tempTimeTable.add(stop);
-
             }
 
-
-//
-//            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(SingleRouteActivity.this,
-//                    R.layout.one_route_item, R.id.stopDesc, tempTT);
-//
-//            lv_single_route.setAdapter(arrayAdapter);
-
-
-            ListAdapter adapter = new SimpleAdapter(SingleRouteActivity.this, routeTimeTable,
+            ListAdapter adapter = new SimpleAdapter(SingleRouteActivity.this, tempTimeTable,
                     R.layout.one_route_item, new String[]{"desc"},
                     new int[]{R.id.stopDesc});  // , R.id.departureTime
             lv_single_route.setAdapter(adapter);
@@ -203,8 +194,18 @@ public class SingleRouteActivity extends AppCompatActivity {
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             Intent one_route_stops_Intent = new Intent(SingleRouteActivity.this, TimeTable.class);
 
-                            // one_route_stops_Intent.putExtra("desc", ));
-                            one_route_stops_Intent.putExtra("timeTable", routeTimeTable.get(position));
+                            String name = parent.getItemAtPosition(position).toString();
+                            one_route_stops_Intent.putExtra("stopName", name);
+
+                            ArrayList<HashMap<String, String>> times = new ArrayList<>();
+                            String stop_id = routeTimeTable.get(position).get("stopId");
+
+                            for (int i = 0; i < routeTimeTable.size(); i++){
+                                if(routeTimeTable.get(i).get("stopId").equals(stop_id)){
+                                    times.add(routeTimeTable.get(i));
+                                }
+                            }
+                            one_route_stops_Intent.putExtra("timeTable", times);
                             startActivity(one_route_stops_Intent);
                         }
                     });

@@ -8,6 +8,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_language">Language</string>
+    <string name="refresh">Refresh</string>
 
     <string name="route_title_bar">Routes</string>
     <string name="stops_title_bar">Bus stops</string>

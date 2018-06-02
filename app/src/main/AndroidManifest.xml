@@ -70,7 +70,14 @@
             android:name=".activities.MapActivity"
             android:label="@string/title_activity_maps"
             android:parentActivityName=".activities.MainActivity" />
-        <activity android:name=".activities.SingleRouteActivity" />
+
+        <activity
+            android:name=".activities.SingleRouteActivity"
+            android:parentActivityName=".activities.RouteActivity" />
+
+        <activity
+            android:name=".activities.TimeTable"
+        />
 
     </application>
 

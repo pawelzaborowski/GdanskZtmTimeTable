@@ -132,10 +132,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.stopsMap = new HashMap<>();
         tripList = new ArrayList<>();
         timeTable = new ArrayList<>();
-
-       // load_WebView = findViewById(R.id.loading_WebView);
-       // loading_WebView.loadUrl("file:///android_asset/loading.gif");
-
     }
 
     @Override
@@ -195,6 +191,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         if (id == R.id.choose_english_language){
             setLocale("en");
+        }
+        if (id == R.id.refresh){
+            new GetData().execute();
         }
 
         return super.onOptionsItemSelected(item);
@@ -303,7 +302,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                         HashMap<String, String> stop = new HashMap<>();
 
-                        if(valueOf(stopId) < 9999 ) {
+                        if(valueOf(stopId) <= 9999 ) {
 
                             stop.put("stopId", stopId);
                             stop.put("stopShortName", stopShortName);
