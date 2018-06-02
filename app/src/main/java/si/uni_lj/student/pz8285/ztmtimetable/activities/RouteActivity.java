@@ -2,32 +2,21 @@ package si.uni_lj.student.pz8285.ztmtimetable.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 
 import si.uni_lj.student.pz8285.ztmtimetable.R;
-import si.uni_lj.student.pz8285.ztmtimetable.model.Model;
-import si.uni_lj.student.pz8285.ztmtimetable.parser.HttpHandler;
 
 public class RouteActivity extends AppCompatActivity {
 

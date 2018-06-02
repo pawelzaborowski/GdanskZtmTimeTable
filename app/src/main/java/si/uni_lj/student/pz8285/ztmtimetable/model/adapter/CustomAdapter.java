@@ -1,4 +1,4 @@
-package si.uni_lj.student.pz8285.ztmtimetable.model;
+package si.uni_lj.student.pz8285.ztmtimetable.model.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;

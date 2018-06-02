@@ -12,22 +12,21 @@ import android.os.Bundle;
 import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
-import android.support.v7.app.ActionBar;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
+import android.support.v7.app.ActionBar;
 import android.text.TextUtils;
 import android.view.MenuItem;
 
-import si.uni_lj.student.pz8285.ztmtimetable.R;
-
 import java.util.List;
+
+import si.uni_lj.student.pz8285.ztmtimetable.R;
 
 
 public class SettingsActivity extends AppCompatPreferenceActivity {
 
-    //EditTextPreference pref = (EditTextPreference) findViewById(R.id.pref);
+    EditTextPreference editTextPreference;
 
     private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
         @Override
@@ -91,11 +90,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupActionBar();
-//
-//        Intent returnIntent = new Intent();
-//        returnIntent.putExtra("result", );
-//        setResult(Activity.RESULT_OK,returnIntent);
-//        finish();
+
     }
 
 

@@ -1,50 +1,39 @@
 package si.uni_lj.student.pz8285.ztmtimetable.activities;
 
-import android.app.Activity;
 import android.app.FragmentManager;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.VideoView;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -53,11 +42,8 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
-import java.util.Objects;
 
 import si.uni_lj.student.pz8285.ztmtimetable.R;
-import si.uni_lj.student.pz8285.ztmtimetable.activities.RouteActivity;
-import si.uni_lj.student.pz8285.ztmtimetable.model.Model;
 import si.uni_lj.student.pz8285.ztmtimetable.parser.HttpHandler;
 
 import static java.lang.Integer.valueOf;
@@ -65,18 +51,17 @@ import static java.lang.Integer.valueOf;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private String favStopId;
-    private int favStopId_int;
     private String favStopName;
     private String TAG = MainActivity.class.getSimpleName();
 
     private ArrayList<HashMap<String, String>> tripList;
     private ArrayList<HashMap<String, String>> timeTable;
     ArrayList<HashMap<String, String>> singleStopList;
+    private WebView webView;
 
     private HashMap<String, String> stopsMap;
 
     private ListView lv_single_stop;
-    private WebView load_WebView;
 
     TextView textView;
     String todayDate;
@@ -87,6 +72,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        webView = (WebView) findViewById(R.id.loading_webView);
+        webView.loadUrl("file:///android_asset/loading.html");
+        webView.setVisibility(View.GONE);
 
         android.support.v7.app.ActionBar ab = getSupportActionBar();
         ab.setTitle("busAPP");
@@ -249,7 +238,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-          //  load_WebView.setVisibility(View.VISIBLE);
+            webView.setVisibility(View.VISIBLE);
             Toast.makeText(MainActivity.this, "Json Data is downloading", Toast.LENGTH_LONG).show();
         }
 
@@ -286,16 +275,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         String stopId = c.getString("stopId");
                         String stopDesc = c.getString("stopDesc");
 
-                        if(valueOf(stopId) < 9999 ) {
+                        if(valueOf(stopId) <= 9999 ) {
                             stopsMap.put(stopId, stopDesc);
                         }
                     }
 
 
-                    for (int i = 0; i < stops.length() / 4; i++) {
+                    for (int i = 0; i < stops.length(); i++) {
                         JSONObject c = stops.getJSONObject(i);
                         String stopId = c.getString("stopId");
-                        String stopShortName = c.getString("stopShortName");
                         String stopDesc = c.getString("stopDesc");
                         String stopLat = c.getString("stopLat");
                         String stopLon = c.getString("stopLon");
@@ -305,7 +293,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         if(valueOf(stopId) <= 9999 ) {
 
                             stop.put("stopId", stopId);
-                            stop.put("stopShortName", stopShortName);
                             stop.put("stopDesc", stopDesc);
                             stop.put("stopLat", stopLat);
                             stop.put("stopLon", stopLon);
@@ -316,11 +303,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             favStopName = stopDesc;
                         }
 
-                        //stopsMap.put(stopId, stopDesc);
-
-
-                        //[{stopLat=54.54907, stopShortName=9480, subName=9480, stopLon=18.49896, stopId=39480, stopDesc=Terminal Promowy},
-
+                      //[{stopLat=54.54907, stopShortName=9480, subName=9480, stopLon=18.49896, stopId=39480, stopDesc=Terminal Promowy},
                     }
                 } catch (final JSONException e) {
                     Log.e(TAG, "Json parsing error: " + e.getMessage());
@@ -350,7 +333,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         String tripId = c.getString("tripId");
                         String routeId = c.getString("routeId");
                         String tripHeadsign = c.getString("tripHeadsign");
-                        String tripShortName = c.getString("tripShortName");
 
                         HashMap<String, String> trip = new HashMap<>();
 
@@ -360,7 +342,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             trip.put("tripId", tripId);
                             trip.put("routeId", routeId);
                             trip.put("tripHeadsign", tripHeadsign);
-                            trip.put("tripShortName", tripShortName);
 
                             tripList.add(trip);
                         }
@@ -379,7 +360,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 }
 
-                // fac bus stop
+                // fav bus stop
                 if (jsonStr_ss != null) {
                     try {
                         JSONObject jsonObj = new JSONObject(jsonStr_ss);
@@ -389,21 +370,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         for (int i = 0; i < singleStop.length(); i++) {
                             JSONObject c = singleStop.getJSONObject(i);
                             String id = c.getString("id");
-                            String delayInSeconds = c.getString("delayInSeconds");
                             String estimatedTime = c.getString("estimatedTime");
                             String routeId = c.getString("routeId");
                             String tripId = c.getString("tripId");
-                            String status = c.getString("status");
                             String theoreticalTime = c.getString("theoreticalTime");
 
                             HashMap<String, String> stop = new HashMap<>();
 
-                            stop.put("stopId", favStopId);
-                            stop.put("delayInSeconds", delayInSeconds);
+                            stop.put("stopId", id);
                             stop.put("estimatedTime", estimatedTime);
                             stop.put("routeId", routeId);
                             stop.put("tripId", tripId);
-                            stop.put("status", status);
                             stop.put("theoreticalTime", theoreticalTime);
 
                             singleStopList.add(stop);
@@ -440,7 +417,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-           // load_WebView.setVisibility(View.GONE);
+            webView.setVisibility(View.INVISIBLE);
 
             Log.i("stops", String.valueOf(timeTable));
             Toast.makeText(MainActivity.this, "DONE", Toast.LENGTH_SHORT).show();

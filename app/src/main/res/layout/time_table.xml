@@ -1,374 +1,440 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="309dp"
-    android:layout_height="540dp">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TableRow
         android:id="@+id/row_0"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="match_parent">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="0" />
+            android:text="0"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour0"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
 
     </TableRow>
+
     <TableRow
         android:id="@+id/row_1"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="1" />
+            android:text="1"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_2"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="2" />
+            android:text="2"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_3"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="3" />
+            android:text="3"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_4"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="4" />
+            android:text="4"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour4"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_5"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="5" />
+            android:text="5"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour5"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_6"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="6" />
+            android:text="6"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour6"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_7"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="7" />
+            android:text="7"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour7"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_8"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="8" />
+            android:text="8"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour8"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_9"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="9" />
+            android:text="9"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour9"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_10"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="10" />
+            android:text="10"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour10"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_11"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="11" />
+            android:text="11"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour11"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_12"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="12" />
+            android:text="12"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour12"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_13"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="13" />
+            android:text="13"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour13"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_14"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="14" />
+            android:text="14"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour14"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_15"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="15" />
+            android:text="15"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour15"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_16"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="16" />
+            android:text="16"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour16"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_17"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="17" />
+            android:text="17"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour17"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_18"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="18" />
+            android:text="18"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour18"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_19"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="19" />
+            android:text="19"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour19"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_20"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="20" />
+            android:text="20"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour20"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_21"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="21" />
+            android:text="21"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour21"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_22"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="74dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="22" />
+            android:text="22"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour22"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
+
     <TableRow
         android:id="@+id/row_23"
         android:layout_width="match_parent"
-        android:layout_height="21dp" >
+        android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:text="23" />
+            android:text="23"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/hour23"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="#000000" />
     </TableRow>
-
-
-
-
-
 
 
 </TableLayout>

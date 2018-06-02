@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -26,6 +28,7 @@ import si.uni_lj.student.pz8285.ztmtimetable.R;
 public class TimeTable extends AppCompatActivity {
 
     private ArrayList<HashMap<String, String>> times;
+    private ArrayList<String> timeList;
     private String stopId, stopName;
     private TableLayout tableLayout;
     private TableRow row0, row1, row2 ,row3 ,row4 ,row5 ,row6 ,row7 ,row8 ,row9 ,row10 ,row11 ,row12 ,row13 ,row14 ,
@@ -41,7 +44,7 @@ public class TimeTable extends AppCompatActivity {
 
         times = (ArrayList<HashMap<String, String>>) this.getIntent().getSerializableExtra("timeTable");
         stopName = (String) this.getIntent().getSerializableExtra("stopName");
-
+        timeList = new ArrayList<>();
         StringTokenizer st = new StringTokenizer(stopName, "=");
         String cos = st.nextToken();
         String nextcos = st.nextToken();
@@ -51,12 +54,19 @@ public class TimeTable extends AppCompatActivity {
         android.support.v7.app.ActionBar ab = getSupportActionBar();
         ab.setTitle(name);
 
+        for (int i = 0; i < times.size(); i++){ //05:05:23
+
+            String hour = times.get(i).get("departureTime");
+            hour = hour.substring(0, hour.length() - 3);
+            timeList.add(hour);
+        }
+
         this.initUI();
-
-
+        this.putHours();
     }
 
     private void initUI(){
+
         this.hour0 = findViewById(R.id.hour0);
         this.hour1 = findViewById(R.id.hour1);
         this.hour2 = findViewById(R.id.hour2);
@@ -82,34 +92,121 @@ public class TimeTable extends AppCompatActivity {
         this.hour22 = findViewById(R.id.hour22);
         this.hour23 = findViewById(R.id.hour23);
 
-        this.row0 = findViewById(R.id.row_0);
-        this.row1 = findViewById(R.id.row_1);
-        this.row2 = findViewById(R.id.row_2);
-        this.row3 = findViewById(R.id.row_3);
-        this.row4 = findViewById(R.id.row_4);
-        this.row5 = findViewById(R.id.row_5);
-        this.row6 = findViewById(R.id.row_6);
-        this.row7 = findViewById(R.id.row_7);
-        this.row8 = findViewById(R.id.row_8);
-        this.row9 = findViewById(R.id.row_9);
-        this.row10 = findViewById(R.id.row_10);
-        this.row11 = findViewById(R.id.row_11);
-        this.row12 = findViewById(R.id.row_12);
-        this.row13 = findViewById(R.id.row_13);
-        this.row14 = findViewById(R.id.row_14);
-        this.row15 = findViewById(R.id.row_15);
-        this.row16 = findViewById(R.id.row_16);
-        this.row17 = findViewById(R.id.row_17);
-        this.row18 = findViewById(R.id.row_18);
-        this.row19 = findViewById(R.id.row_19);
-        this.row20 = findViewById(R.id.row_20);
-        this.row21 = findViewById(R.id.row_21);
-        this.row22 = findViewById(R.id.row_22);
-        this.row23 = findViewById(R.id.row_23);
+//        this.row0 = findViewById(R.id.row_0);
+//        this.row1 = findViewById(R.id.row_1);
+//        this.row2 = findViewById(R.id.row_2);
+//        this.row3 = findViewById(R.id.row_3);
+//        this.row4 = findViewById(R.id.row_4);
+//        this.row5 = findViewById(R.id.row_5);
+//        this.row6 = findViewById(R.id.row_6);
+//        this.row7 = findViewById(R.id.row_7);
+//        this.row8 = findViewById(R.id.row_8);
+//        this.row9 = findViewById(R.id.row_9);
+//        this.row10 = findViewById(R.id.row_10);
+//        this.row11 = findViewById(R.id.row_11);
+//        this.row12 = findViewById(R.id.row_12);
+//        this.row13 = findViewById(R.id.row_13);
+//        this.row14 = findViewById(R.id.row_14);
+//        this.row15 = findViewById(R.id.row_15);
+//        this.row16 = findViewById(R.id.row_16);
+//        this.row17 = findViewById(R.id.row_17);
+//        this.row18 = findViewById(R.id.row_18);
+//        this.row19 = findViewById(R.id.row_19);
+//        this.row20 = findViewById(R.id.row_20);
+//        this.row21 = findViewById(R.id.row_21);
+//        this.row22 = findViewById(R.id.row_22);
+//        this.row23 = findViewById(R.id.row_23);
+//
+//
+//        row0.setMinimumHeight(50);
 
     }
 
-    private void putHours(String hour){
+    private void putHours(){
+
+        for(int i = 0; i < timeList.size(); i++){
+            String temp_time = timeList.get(i);
+            String hour = temp_time;
+            hour = hour.substring(0, temp_time.length() - 3);
+            String minutes = temp_time;
+            minutes = minutes.substring(temp_time.length() - 2, temp_time.length());
+            switch (hour){
+
+                case "00":
+                    hour0.append(minutes + "   ");
+                    continue;
+                case "01":
+                    hour1.append(minutes + "   ");
+                    continue;
+                case "02":
+                    hour2.append(minutes + "   ");
+                    continue;
+                case "03":
+                    hour3.append(minutes + "   ");
+                    continue;
+                case "04":
+                    hour4.append(minutes + "   ");
+                    continue;
+                case "05":
+                    hour5.append(minutes + "   ");
+                    continue;
+                case "06":
+                    hour6.append(minutes + "   ");
+                    continue;
+                case "07":
+                    hour7.append(minutes + "   ");
+                    continue;
+                case "08":
+                    hour8.append(minutes + "   ");
+                    continue;
+                case "09":
+                    hour9.append(minutes + "   ");
+                    continue;
+                case "10":
+                    hour10.append(minutes + "   ");
+                    continue;
+                case "11":
+                    hour11.append(minutes + "   ");
+                    continue;
+                case "12":
+                    hour12.append(minutes + "   ");
+                    continue;
+                case "13":
+                    hour13.append(minutes + "   ");
+                    continue;
+                case "14":
+                    hour14.append(minutes + "   ");
+                    continue;
+                case "15":
+                    hour15.append(minutes + "   ");
+                    continue;
+                case "16":
+                    hour16.append(minutes + "   ");
+                    continue;
+                case "17":
+                    hour17.append(minutes + "   ");
+                    continue;
+                case "18":
+                    hour18.append(minutes + "   ");
+                    continue;
+                case "19":
+                    hour19.append(minutes + "   ");
+                    continue;
+                case "20":
+                    hour20.append(minutes + "   ");
+                    continue;
+                case "21":
+                    hour21.append(minutes + "   ");
+                    continue;
+                case "22":
+                    hour22.append(minutes + "   ");
+                    continue;
+                case "23":
+                    hour23.append(minutes + "   ");
+                    continue;
+
+            }
+        }
 
     }
 
