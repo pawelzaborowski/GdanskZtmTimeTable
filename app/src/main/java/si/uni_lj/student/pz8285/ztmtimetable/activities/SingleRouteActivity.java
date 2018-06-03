@@ -120,8 +120,6 @@ public class SingleRouteActivity extends AppCompatActivity {
                         HashMap<String, String> stop = new HashMap<>();
 
                         stop.put("routeId", routeId);
-                        stop.put("tripId", tripId);
-                        stop.put("arrivalTime", arrivalTime);
                         stop.put("departureTime", departureTime);
                         stop.put("stopId", stopId);
 
