@@ -3,24 +3,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="@dimen/activity_horizontal_margin">
 
     <TextView
-        android:id="@+id/tripId"
-        android:layout_width="fill_parent"
+        android:layout_width="31dp"
         android:layout_height="wrap_content"
-        android:paddingBottom="2dip"
+        android:layout_weight="1"
+        android:text="🚍 "
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tripId"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
         android:textColor="@color/colorAccent"
-        android:textSize="24sp"
-         />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/estimatedTime"
-        android:layout_width="wrap_content"
+        android:layout_width="66dp"
         android:layout_height="wrap_content"
         android:textColor="#5d5d5d"
         android:textSize="24sp"
-        android:textStyle="bold"
-         />
+        android:textStyle="bold" />
 </LinearLayout>
