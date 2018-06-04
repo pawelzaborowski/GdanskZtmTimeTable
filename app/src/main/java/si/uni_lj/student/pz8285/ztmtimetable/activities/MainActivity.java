@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         todayDate = df.format(c);
 
-        favStopId = "35240";
+            favStopId = "35240";
         favStopName = "";
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -277,7 +277,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         String stopId = c.getString("stopId");
                         String stopDesc = c.getString("stopDesc");
 
-                        if(valueOf(stopId) <= 9999 ) {
+                        if (valueOf(stopId) <= 9999) {
                             stopsMap.put(stopId, stopDesc);
                         }
                     }
@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                         HashMap<String, String> stop = new HashMap<>();
 
-                        if(valueOf(stopId) <= 9999 ) {
+                        if (valueOf(stopId) <= 9999) {
 
                             stop.put("stopId", stopId);
                             stop.put("stopDesc", stopDesc);
@@ -301,11 +301,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             timeTable.add(stop);
                         }
 
-                        if (stopId.equals(favStopId)){
+                        if (stopId.equals(favStopId)) {
                             favStopName = stopDesc;
                         }
 
-                      //[{stopLat=54.54907, stopShortName=9480, subName=9480, stopLon=18.49896, stopId=39480, stopDesc=Terminal Promowy},
+                        //[{stopLat=54.54907, stopShortName=9480, subName=9480, stopLon=18.49896, stopId=39480, stopDesc=Terminal Promowy},
                     }
                 } catch (final JSONException e) {
                     Log.e(TAG, "Json parsing error: " + e.getMessage());
@@ -339,7 +339,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         HashMap<String, String> trip = new HashMap<>();
 
 
-                        if((valueOf(routeId) < 13 ) || ((valueOf(routeId) < 300) && (valueOf(routeId) >= 100))) {
+                        if ((valueOf(routeId) < 13) || ((valueOf(routeId) < 300) && (valueOf(routeId) >= 100))) {
                             trip.put("id", id);
                             trip.put("tripId", tripId);
                             trip.put("routeId", routeId);
@@ -373,17 +373,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             JSONObject c = singleStop.getJSONObject(i);
                             String id = c.getString("id");
                             String estimatedTime = c.getString("estimatedTime");
-                            String routeId = c.getString("routeId");
                             String tripId = c.getString("tripId");
                             String theoreticalTime = c.getString("theoreticalTime");
+                            String headSign = c.getString("headsign");
 
                             HashMap<String, String> stop = new HashMap<>();
 
                             stop.put("stopId", id);
                             stop.put("estimatedTime", estimatedTime);
-                            stop.put("routeId", routeId);
                             stop.put("tripId", tripId);
                             stop.put("theoreticalTime", theoreticalTime);
+                            stop.put("headsign", headSign);
 
                             singleStopList.add(stop);
 
@@ -433,15 +433,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             textView.setText(favStopName);
             ListAdapter adapter = new SimpleAdapter(MainActivity.this, singleStopList,
-                    R.layout.one_stop_item_main, new String[]{"tripId", "estimatedTime"},
-                    new int[]{R.id.tripId, R.id.estimatedTime});
+                    R.layout.one_stop_item_main, new String[]{"tripId", "estimatedTime", "headsign"},
+                    new int[]{R.id.tripId, R.id.estimatedTime, R.id.route_textView});
             lv_single_stop.setAdapter(adapter);
 
-//            ListAdapter adapter1 = new SimpleAdapter(MainActivity.this, singleStopList,
-//                    R.layout.time_stop_item, new String[]{"estimatedTime"},
-//                    new int[]{R.id.time});
-//            lv_time.setAdapter(adapter1);
-    }
+        }
 
     }
 
