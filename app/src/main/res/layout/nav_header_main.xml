@@ -14,22 +14,24 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="119dp"
+        android:layout_width="wrap_content"
         android:layout_height="91dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@drawable/app_icon" />
+        app:srcCompat="@drawable/buses_roundel" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="busAPP"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="pz8285@student.uni-lj.si" />
+        android:text="pz8285@student.uni-lj.si"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
 </LinearLayout>

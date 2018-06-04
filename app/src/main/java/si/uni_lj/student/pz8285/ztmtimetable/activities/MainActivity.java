@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private HashMap<String, String> stopsMap;
 
     private ListView lv_single_stop;
+    private ListView lv_time;
 
     TextView textView;
     String todayDate;
@@ -114,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         singleStopList = new ArrayList<>();
         lv_single_stop = (ListView) findViewById(R.id.stops_list_main);
+     //   lv_time = findViewById(R.id.stops_times_main);
 
         textView = (TextView) findViewById(R.id.textView4);
         textView.setText(favStopName);
@@ -434,7 +436,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     R.layout.one_stop_item_main, new String[]{"tripId", "estimatedTime"},
                     new int[]{R.id.tripId, R.id.estimatedTime});
             lv_single_stop.setAdapter(adapter);
-        }
+
+//            ListAdapter adapter1 = new SimpleAdapter(MainActivity.this, singleStopList,
+//                    R.layout.time_stop_item, new String[]{"estimatedTime"},
+//                    new int[]{R.id.time});
+//            lv_time.setAdapter(adapter1);
+    }
 
     }
 

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:measureWithLargestChild="true" >
 
     <TableRow
         android:id="@+id/row_0"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -27,8 +28,9 @@
     <TableRow
         android:id="@+id/row_1"
         android:layout_width="match_parent"
-        android:layout_height="74dp"
-        android:background="#d2d2d2">
+        android:layout_height="wrap_content"
+        android:background="#d2d2d2"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -47,7 +49,8 @@
     <TableRow
         android:id="@+id/row_2"
         android:layout_width="match_parent"
-        android:layout_height="74dp">
+        android:layout_height="74dp"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -67,7 +70,8 @@
         android:id="@+id/row_3"
         android:layout_width="match_parent"
         android:layout_height="74dp"
-        android:background="#d2d2d2">
+        android:background="#d2d2d2"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -86,7 +90,8 @@
     <TableRow
         android:id="@+id/row_4"
         android:layout_width="match_parent"
-        android:layout_height="74dp">
+        android:layout_height="74dp"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -106,7 +111,8 @@
         android:id="@+id/row_5"
         android:layout_width="match_parent"
         android:layout_height="74dp"
-        android:background="#d2d2d2">
+        android:background="#d2d2d2"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -125,7 +131,8 @@
     <TableRow
         android:id="@+id/row_6"
         android:layout_width="match_parent"
-        android:layout_height="74dp">
+        android:layout_height="74dp"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -145,7 +152,8 @@
         android:id="@+id/row_7"
         android:layout_width="match_parent"
         android:layout_height="74dp"
-        android:background="#d2d2d2">
+        android:background="#d2d2d2"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -164,7 +172,8 @@
     <TableRow
         android:id="@+id/row_8"
         android:layout_width="match_parent"
-        android:layout_height="74dp">
+        android:layout_height="74dp"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -184,7 +193,8 @@
         android:id="@+id/row_9"
         android:layout_width="match_parent"
         android:layout_height="74dp"
-        android:background="#d2d2d2">
+        android:background="#d2d2d2"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -203,7 +213,8 @@
     <TableRow
         android:id="@+id/row_10"
         android:layout_width="match_parent"
-        android:layout_height="74dp">
+        android:layout_height="74dp"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -223,7 +234,8 @@
         android:id="@+id/row_11"
         android:layout_width="match_parent"
         android:layout_height="74dp"
-        android:background="#d2d2d2">
+        android:background="#d2d2d2"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -242,7 +254,8 @@
     <TableRow
         android:id="@+id/row_12"
         android:layout_width="match_parent"
-        android:layout_height="74dp">
+        android:layout_height="74dp"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -262,7 +275,8 @@
         android:id="@+id/row_13"
         android:layout_width="match_parent"
         android:layout_height="74dp"
-        android:background="#d2d2d2">
+        android:background="#d2d2d2"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -281,7 +295,8 @@
     <TableRow
         android:id="@+id/row_14"
         android:layout_width="match_parent"
-        android:layout_height="74dp">
+        android:layout_height="74dp"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -301,7 +316,8 @@
         android:id="@+id/row_15"
         android:layout_width="match_parent"
         android:layout_height="74dp"
-        android:background="#d2d2d2">
+        android:background="#d2d2d2"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -320,7 +336,8 @@
     <TableRow
         android:id="@+id/row_16"
         android:layout_width="match_parent"
-        android:layout_height="74dp">
+        android:layout_height="74dp"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -340,7 +357,8 @@
         android:id="@+id/row_17"
         android:layout_width="match_parent"
         android:layout_height="74dp"
-        android:background="#d2d2d2">
+        android:background="#d2d2d2"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -359,7 +377,8 @@
     <TableRow
         android:id="@+id/row_18"
         android:layout_width="match_parent"
-        android:layout_height="74dp">
+        android:layout_height="74dp"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -379,7 +398,8 @@
         android:id="@+id/row_19"
         android:layout_width="match_parent"
         android:layout_height="74dp"
-        android:background="#d2d2d2">
+        android:background="#d2d2d2"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -398,7 +418,8 @@
     <TableRow
         android:id="@+id/row_20"
         android:layout_width="match_parent"
-        android:layout_height="74dp">
+        android:layout_height="74dp"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -417,8 +438,9 @@
     <TableRow
         android:id="@+id/row_21"
         android:layout_width="match_parent"
-        android:layout_height="74dp"
-        android:background="#d2d2d2">
+        android:layout_height="match_parent"
+        android:background="#d2d2d2"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -437,7 +459,8 @@
     <TableRow
         android:id="@+id/row_22"
         android:layout_width="match_parent"
-        android:layout_height="74dp">
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"
@@ -457,7 +480,8 @@
         android:id="@+id/row_23"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#d2d2d2">
+        android:background="#d2d2d2"
+        android:layout_weight="1" >
 
         <TextView
             android:layout_width="30dp"

@@ -42,7 +42,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     }
 
 
-    @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -66,6 +65,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             startActivity(loc_permission);
         }
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(54, -18)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(54, 18)));
     }
 }
