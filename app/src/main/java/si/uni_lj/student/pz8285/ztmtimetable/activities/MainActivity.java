@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private HashMap<String, String> stopsMap;
 
     private ListView lv_single_stop;
-    private ListView lv_time;
 
     TextView textView;
     String todayDate;
@@ -101,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         todayDate = df.format(c);
 
-            favStopId = "35240";
+        favStopId = "35240";
         favStopName = "";
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -438,7 +437,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
     }
-
-
-
 }

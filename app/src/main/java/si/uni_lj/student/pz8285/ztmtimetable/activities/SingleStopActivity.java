@@ -45,9 +45,6 @@ public class SingleStopActivity extends AppCompatActivity  {
 
          HashMap<String, String> stopMap = (HashMap<String, String>) this.getIntent().getSerializableExtra("stopMap");
 
-         if(stopMap != null){
-             Toast.makeText(SingleStopActivity.this, stopMap.get("stopId") ,Toast.LENGTH_LONG).show();
-         }
         stopId = stopMap.get("stopId");
         android.support.v7.app.ActionBar ab = getSupportActionBar();
         ab.setTitle(stopMap.get("stopDesc"));
@@ -127,13 +124,13 @@ public class SingleStopActivity extends AppCompatActivity  {
 
                     for (int i = 0; i < singleStop.length(); i++) {
                         JSONObject c = singleStop.getJSONObject(i);
-                        String id = c.getString("stopId");
+                       // String id = c.getString("stopId");
                         String estimatedTime = c.getString("estimatedTime");
                         String routeId = c.getString("routeId");
 
                         HashMap<String, String> stop = new HashMap<>();
 
-                        stop.put("stopId", stopId);
+                        //stop.put("stopId", stopId);
                         stop.put("estimatedTime", estimatedTime);
                         stop.put("routeId", routeId);
 
@@ -172,7 +169,7 @@ public class SingleStopActivity extends AppCompatActivity  {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
             ListAdapter adapter = new SimpleAdapter(SingleStopActivity.this, singleStopList,
-                    R.layout.one_stop_item, new String[]{"tripId", "estimatedTime"},
+                    R.layout.one_stop_item, new String[]{"routeId", "estimatedTime"},
                     new int[]{R.id.tripId, R.id.estimatedTime});
             lv_single_stop.setAdapter(adapter);
 
