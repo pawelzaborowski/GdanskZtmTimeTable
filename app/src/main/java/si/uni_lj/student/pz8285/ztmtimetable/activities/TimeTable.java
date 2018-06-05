@@ -29,10 +29,7 @@ public class TimeTable extends AppCompatActivity {
 
     private ArrayList<HashMap<String, String>> times;
     private ArrayList<String> timeList;
-    private String stopId, stopName;
-    private TableLayout tableLayout;
-    private TableRow row0, row1, row2 ,row3 ,row4 ,row5 ,row6 ,row7 ,row8 ,row9 ,row10 ,row11 ,row12 ,row13 ,row14 ,
-                     row15 ,row16 ,row17 ,row18, row19 ,row20 ,row21 ,row22 ,row23;
+    private String stopName;
     private TextView hour0, hour1 ,hour2 ,hour3 ,hour4 ,hour5 ,hour6 ,hour7 ,hour8 ,hour9 ,hour10 ,
                      hour11 ,hour12 ,hour13 ,hour14 ,hour15 ,hour16 ,hour17 ,hour18 ,hour19 ,hour20 ,hour21,
                      hour22 ,hour23;

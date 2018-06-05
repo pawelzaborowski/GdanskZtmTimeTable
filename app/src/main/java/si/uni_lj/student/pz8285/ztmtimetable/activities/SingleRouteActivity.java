@@ -39,13 +39,11 @@ public class SingleRouteActivity extends AppCompatActivity {
     private HashMap<String, String> stopsMap = new HashMap<String, String>();
     private String todayDate;
     ArrayList<HashMap<String, String>> tempTimeTable;
-//    TextView stopDescTextView = (TextView) findViewById(R.id.stopDesc);
 
     String inputPattern = "YYYY-MM-DD'T'HH:MM:SS";
     String outputPattern = "HH:MM";
     SimpleDateFormat inputFormat;
     SimpleDateFormat outputFormat;
-    //good
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +53,6 @@ public class SingleRouteActivity extends AppCompatActivity {
         this.stopsMap = (HashMap<String, String>) this.getIntent().getSerializableExtra("stopsMap");
         HashMap<String, String> routeMap = (HashMap<String, String>) this.getIntent().getSerializableExtra("routeMap");
 
-        // this.stopsMap = stopsMap;
         if (routeMap != null) {
             Toast.makeText(SingleRouteActivity.this, routeMap.get("tripShortName"), Toast.LENGTH_LONG).show();
         }
@@ -73,8 +70,6 @@ public class SingleRouteActivity extends AppCompatActivity {
         inputFormat = new SimpleDateFormat(inputPattern);
         outputFormat = new SimpleDateFormat(outputPattern);
 
-        Log.i("stopDesc", String.valueOf(stopsMap));
-
         new GetRouteTimeTable().execute();
     }
 
@@ -83,7 +78,6 @@ public class SingleRouteActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             Toast.makeText(SingleRouteActivity.this, "Json Data is downloading", Toast.LENGTH_LONG).show();
-
         }
 
         @Override
@@ -102,8 +96,6 @@ public class SingleRouteActivity extends AppCompatActivity {
                     for (int i = 0; i < route.length(); i++) {
                         JSONObject c = route.getJSONObject(i);
                         String routeId = c.getString("routeId");
-                        String tripId = c.getString("tripId");
-                        String arrivalTime = c.getString("arrivalTime");
                         String departureTime = c.getString("departureTime");
                         String stopId = c.getString("stopId");
 
@@ -127,8 +119,6 @@ public class SingleRouteActivity extends AppCompatActivity {
                             stop.put("stopDesc", stopDesc);
                         }
                         routeTimeTable.add(stop);
-
-                        //[{stopLat=54.54907, stopShortName=9480, subName=9480, stopLon=18.49896, stopId=39480, stopDesc=Terminal Promowy},
 
                     }
                 } catch (final JSONException e) {
@@ -171,8 +161,6 @@ public class SingleRouteActivity extends AppCompatActivity {
                     break;
                 }
                 String stopId = routeTimeTable.get(i).get("stopId");
-                //tempTimeTable(i).add(stop);
-                // tempTT.add(stop);
                 String desc = stopsMap.get(stopId);
                 HashMap<String, String> stop = new HashMap<>();
                 stop.put("stopId", stopId);

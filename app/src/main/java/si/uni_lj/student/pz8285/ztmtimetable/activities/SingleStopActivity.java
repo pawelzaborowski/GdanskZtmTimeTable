@@ -123,8 +123,6 @@ public class SingleStopActivity extends AppCompatActivity  {
             if (jsonStr != null) {
                 try {
                     JSONObject jsonObj = new JSONObject(jsonStr);
-
-                    // JSONObject dateOfData = jsonObj.getJSONObject(todayDate);
                     JSONArray singleStop = jsonObj.getJSONArray("delay");
 
                     for (int i = 0; i < singleStop.length(); i++) {

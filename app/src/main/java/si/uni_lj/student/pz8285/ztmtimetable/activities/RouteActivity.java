@@ -20,15 +20,11 @@ import si.uni_lj.student.pz8285.ztmtimetable.R;
 
 public class RouteActivity extends AppCompatActivity {
 
-    private String TAG = MainActivity.class.getSimpleName();
     private ListView lv_route;
 
     private ArrayList<HashMap<String, String>> tripList;
-    private ArrayList<String> stopId;
-    private ArrayList<String> stopDesc;
     public HashMap<String, String> stopsMap = new HashMap<String, String>();
     String todayDate;
-
 
     @SuppressLint("SimpleDateFormat")
     @Override
@@ -63,6 +59,4 @@ public class RouteActivity extends AppCompatActivity {
                     }
                 });
     }
-
-
 }

@@ -37,11 +37,7 @@ import si.uni_lj.student.pz8285.ztmtimetable.parser.HttpHandler;
 
 public class StopsActivity extends AppCompatActivity {
 
-    private String TAG = MainActivity.class.getSimpleName();
     private ListView lv;
-
-    private String favStopId;
-    Intent intent;
 
     ArrayList<HashMap<String, String>> stopsList;
     private String todayDate;
@@ -65,7 +61,7 @@ public class StopsActivity extends AppCompatActivity {
         stopsList = (ArrayList<HashMap<String, String>>) this.getIntent().getSerializableExtra("stopsList");
 
         final ListAdapter adapter = new SimpleAdapter(StopsActivity.this, stopsList,
-                R.layout.stops_items, new String[]{"stopDesc", "stopId"},
+                R.layout.stops_items, new String[]{"stopDesc"},
                 new int[]{R.id.stopDesc});
         lv.setAdapter(adapter);
 

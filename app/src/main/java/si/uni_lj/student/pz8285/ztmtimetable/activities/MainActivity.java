@@ -282,7 +282,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         }
                     }
 
-
                     for (int i = 0; i < stops.length(); i++) {
                         JSONObject c = stops.getJSONObject(i);
                         String stopId = c.getString("stopId");
@@ -421,7 +420,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             super.onPostExecute(result);
             webView.setVisibility(View.INVISIBLE);
 
-            Log.i("stops", String.valueOf(timeTable));
             Toast.makeText(MainActivity.this, "DONE", Toast.LENGTH_SHORT).show();
 
             Collections.sort(tripList, new Comparator<HashMap<String, String>>() {

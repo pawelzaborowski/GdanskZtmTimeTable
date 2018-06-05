@@ -47,11 +47,6 @@
             android:parentActivityName=".activities.MainActivity"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
         <activity
-            android:name=".activities.ShareActivity"
-            android:label="@string/share_title_bar"
-            android:parentActivityName=".activities.MainActivity"
-            android:theme="@android:style/Theme.NoTitleBar" />
-        <activity
             android:name=".activities.SettingsActivity"
             android:label="@string/settings_title_bar"
             android:parentActivityName=".activities.MainActivity" />
