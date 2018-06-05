@@ -1,6 +1,5 @@
 package si.uni_lj.student.pz8285.ztmtimetable.activities;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

@@ -8,13 +8,11 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import si.uni_lj.student.pz8285.ztmtimetable.R;
-import si.uni_lj.student.pz8285.ztmtimetable.activities.MainActivity;
 
 /**
  * Created by Pawel on 17.05.2018.
