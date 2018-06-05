@@ -58,7 +58,7 @@ public class StopsActivity extends AppCompatActivity {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         todayDate = df.format(c);
 
-        stopsList = (ArrayList<HashMap<String, String>>) this.getIntent().getSerializableExtra("stopsList");
+        stopsList = (ArrayList<HashMap<String, String>>) this.getIntent().getSerializableExtra("timeTable");
 
         final ListAdapter adapter = new SimpleAdapter(StopsActivity.this, stopsList,
                 R.layout.stops_items, new String[]{"stopDesc"},

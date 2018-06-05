@@ -127,18 +127,15 @@ public class SingleStopActivity extends AppCompatActivity  {
 
                     for (int i = 0; i < singleStop.length(); i++) {
                         JSONObject c = singleStop.getJSONObject(i);
-                        String id = c.getString("id");
-                        Log.i("stopId", stopId);
+                        String id = c.getString("stopId");
                         String estimatedTime = c.getString("estimatedTime");
                         String routeId = c.getString("routeId");
-                        String theoreticalTime = c.getString("theoreticalTime");
 
                         HashMap<String, String> stop = new HashMap<>();
 
                         stop.put("stopId", stopId);
                         stop.put("estimatedTime", estimatedTime);
                         stop.put("routeId", routeId);
-                        stop.put("theoreticalTime", theoreticalTime);
 
                         singleStopList.add(stop);
 
